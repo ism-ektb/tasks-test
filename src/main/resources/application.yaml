@@ -1,0 +1,26 @@
+spring:
+  liquibase:
+    enabled: true
+  application:
+    name: task_test
+  sql:
+    init:
+      mode: never
+  datasource:
+    driverClassName: org.postgresql.Driver
+    url: jdbc:postgresql://localhost:6432/user?createDatabaseIfNotExist=true
+    username: user
+    password: user
+  jpa:
+    database-platform: org.hibernate.dialect.PostgreSQLDialect
+    hibernate:
+      ddl-auto: validate
+    show-sql: true
+
+security:
+  jwt:
+    secret_key: 745ebb6b2805e858c9fe36719cc9023d9f0cb153c45c7a7ccacef8b8b6f1621f
+    access_token_expiration: 36000000 # 10 hours
+    refresh_token_expiration: 252000000 # 7 days
+springdoc:
+  show-login-endpoint: true

@@ -1,0 +1,15 @@
+version: '3'
+
+services:
+  db-task:
+    image: postgres:13.7-alpine
+    container_name: db-task
+    ports:
+      - "6432:5432"
+    volumes:
+      - /var/lib/postgresql/data/
+    environment:
+      - POSTGRES_PASSWORD=user
+      - POSTGRES_USER=user
+      - POSTGRES_DB=user
+
